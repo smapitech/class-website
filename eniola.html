@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Eniola's Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Eniola's Page</h1>
+    <p>I am practising GitHub pull request.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Simple Quiz</h2>
+
+      <p id="result">
+        Question: Which language makes websites interactive?
+      </p>
+
+      <button onclick="checkAnswer()">Answer Question</button>
+
+      <a class="back-link" href="index.html">Back to Home</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Eniola</p>
+  </footer>
+
+  <script>
+    function checkAnswer() {
+      let answer = prompt("Which language makes websites interactive?");
+
+      if (answer === "JavaScript" || answer === "javascript") {
+        document.getElementById("result").innerHTML =
+          "Correct! JavaScript makes websites interactive.";
+      } else {
+        document.getElementById("result").innerHTML =
+          "Wrong answer. The correct answer is JavaScript.";
+      }
+    }
+  </script>
+
+</body>
+</html>
