@@ -3,103 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kids Typing Adventure</title>
+
+  <title>Kids Pull Request Practice</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="app">
-    <header class="topbar">
-      <div>
-        <p class="eyebrow">SMAPIS KIDS CODING</p>
-        <h1>Kids Typing Adventure</h1>
+
+  <header>
+    <h1>Kids Pull Request Practice</h1>
+    <p>Welcome to our class GitHub collaboration project.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Class Pages</h2>
+
+      <p>
+        Each student will create one page, push it to GitHub,
+        and open a pull request.
+      </p>
+
+      <div class="link-grid">
+        <a href="fatima.html">Fatima's Page</a>
+        <a href="ahmad.html">Ahmad's Page</a>
+        <a href="eniola.html">Eniola's Page</a>
+        <a href="david.html">David's Page</a>
+        <a href="sarah.html">Sarah's Page</a>
+        <a href="joshua.html">Joshua's Page</a>
+        <a href="mary.html">Mary's Page</a>
+        <a href="daniel.html">Daniel's Page</a>
       </div>
-      <div class="stats">
-        <div><span>⭐</span><strong id="totalStars">0</strong><small>Stars</small></div>
-        <div><span>🎯</span><strong id="bestAccuracy">0%</strong><small>Best Accuracy</small></div>
-        <div><span>⚡</span><strong id="bestWpm">0</strong><small>Best WPM</small></div>
-        <button id="soundBtn" class="round-btn">🔊</button>
-      </div>
-    </header>
+    </section>
+  </main>
 
-    <main>
-      <section id="homeScreen" class="screen active">
-        <div class="hero">
-          <div>
-            <span class="pill">Play • Learn • Grow</span>
-            <h2>Typing can be fun!</h2>
-            <p>Choose a stage, play slowly, collect stars, and watch your typing improve.</p>
-            <label class="field">
-              <span>Player name</span>
-              <input id="playerName" maxlength="20" placeholder="Enter child name">
-            </label>
-            <label class="field">
-              <span>Speed mode</span>
-              <select id="speedMode">
-                <option value="extra-slow">Extra Slow</option>
-                <option value="slow" selected>Slow</option>
-                <option value="normal">Normal</option>
-              </select>
-            </label>
-          </div>
-          <div class="hero-art">
-            <span class="rocket">🚀</span>
-            <span class="planet">🪐</span>
-            <span class="cloud one">☁️</span>
-            <span class="cloud two">☁️</span>
-          </div>
-        </div>
+  <footer>
+    <p>Created by our JavaScript class</p>
+  </footer>
 
-        <section>
-          <div class="section-heading">
-            <div>
-              <p class="eyebrow">LEARNING JOURNEY</p>
-              <h3>Choose a stage</h3>
-            </div>
-            <button id="continueBtn" class="primary-btn">Continue Adventure</button>
-          </div>
-          <div id="stageGrid" class="stage-grid"></div>
-        </section>
-
-        <section class="progress-panel">
-          <div>
-            <p class="eyebrow">RECENT PROGRESS</p>
-            <h3>My progress</h3>
-          </div>
-          <div class="progress-cards">
-            <div><strong id="sessionsPlayed">0</strong><span>Sessions</span></div>
-            <div><strong id="avgAccuracy">0%</strong><span>Average Accuracy</span></div>
-            <div><strong id="avgWpm">0</strong><span>Average WPM</span></div>
-            <div><strong id="practiceMinutes">0</strong><span>Practice Minutes</span></div>
-          </div>
-          <div id="recentSessions" class="session-list"></div>
-        </section>
-      </section>
-
-      <section id="gameScreen" class="screen">
-        <div class="game-toolbar">
-          <button id="homeBtn" class="secondary-btn">← Home</button>
-          <div class="game-meta">
-            <strong id="stageTitle">Stage</strong>
-            <span id="levelTitle">Level</span>
-            <span>Score: <b id="scoreValue">0</b></span>
-            <span>Accuracy: <b id="accuracyValue">100%</b></span>
-            <span>WPM: <b id="wpmValue">0</b></span>
-          </div>
-          <button id="nextBtn" class="secondary-btn">Next Level →</button>
-        </div>
-
-        <div class="progress-track">
-          <div id="levelProgress" class="progress-fill"></div>
-        </div>
-
-        <div id="gameStage" class="game-stage"></div>
-        <div id="messageBar" class="message-bar">You can do it!</div>
-      </section>
-    </main>
-  </div>
-
-  <div id="celebration" class="celebration"></div>
-  <script src="js/sound.js"></script>
-  <script src="app.js"></script>
 </body>
 </html>
