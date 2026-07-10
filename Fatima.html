@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fatima's Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Fatima's Page</h1>
+    <p>My first page added with a pull request.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>About Me</h2>
+
+      <p>
+        My name is Fatima. I am learning HTML, CSS, JavaScript,
+        Git, GitHub, and pull requests.
+      </p>
+
+      <h2>My Favourite JavaScript Topic</h2>
+
+      <p id="message">
+        Click the button to see my favourite topic.
+      </p>
+
+      <button onclick="showTopic()">Show Topic</button>
+
+      <a class="back-link" href="index.html">Back to Home</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Fatima</p>
+  </footer>
+
+  <script>
+    function showTopic() {
+      document.getElementById("message").innerHTML =
+        "My favourite topic is document.getElementById().";
+    }
+  </script>
+
+</body>
+</html>
