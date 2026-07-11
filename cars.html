@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VELOCITY WORLDWIDE | Hyper-Luxury Global Showroom</title>
+    <!-- Tailwind CSS for modern layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Syncopate & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            overflow-x: hidden;
+        }
+        .heading-font {
+            font-family: 'Syncopate', sans-serif;
+            letter-spacing: 4px;
+        }
+        .glass-panel {
+            background: rgba(20, 22, 26, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .accent-glow {
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.15);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #1f2833;
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #45f3ff;
+        }
+    </style>
+</head>
+<body class="custom-scrollbar">
+
+    <!-- Top Navigation Bar -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-zinc-800 px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center space-x-3">
+            <i data-lucide="gauge" class="w-8 h-8 text-cyan-400 animate-pulse"></i>
+            <span class="heading-font text-white text-xl font-bold tracking-widest">VELOCITY</span>
+        </div>
+        <div class="flex items-center space-x-6">
+            <div class="flex items-center space-x-2 text-xs uppercase tracking-wider text-zinc-400 bg-zinc-900/80 px-4 py-2 rounded-full border border-zinc-800">
+                <i data-lucide="globe" class="w-4 h-4 text-cyan-400"></i>
+                <span>Global Market Hub</span>
+            </div>
+            <select id="currencySelector" onchange="changeGlobalCurrency()" class="bg-zinc-950 text-white border border-zinc-800 rounded-md text-sm px-3 py-1.5 focus:outline-none focus:border-cyan-400 cursor-pointer">
+                <option value="USD">USD ($)</option>
+                <option value="EUR">EUR (€)</option>
+                <option value="MYR">MYR (RM)</option>
+                <option value="NGN">NGN (₦)</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- Hero / Showcase Window -->
+    <header class="relative w-full min-h-[60vh] flex flex-col justify-end p-8 md:p-16 bg-gradient-to-t from-[#0b0c10] via-transparent to-black/50 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img id="heroImage" src="https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1920&q=80" alt="Featured Hypercar" class="w-full h-full object-cover opacity-40 transition-all duration-700 ease-in-out scale-105">
+        </div>
+        <div class="relative z-10 max-w-4xl space-y-4">
+            <span class="text-cyan-400 text-xs uppercase font-bold tracking-widest bg-cyan-950/50 border border-cyan-800/40 px-3 py-1 rounded-full">World Premier Inventory</span>
+            <h1 id="heroName" class="heading-font text-4xl md:text-6xl text-white font-bold leading-tight drop-shadow-lg">BUGATTI CHIRON SUPER SPORT</h1>
+            <p id="heroSpecs" class="text-zinc-400 text-sm md:text-lg max-w-2xl">8.0L Quad-Turbocharged W16 | 1578 Horsepower | Top Speed: 440 km/h. Engineering perfected for pure digital ecstasy.</p>
+            <div class="pt-4 flex flex-wrap gap-4">
+                <button class="bg-cyan-500 hover:bg-cyan-400 text-black font-semibold uppercase tracking-wider text-xs px-6 py-3.5 rounded-sm transition-all shadow-lg hover:shadow-cyan-500/20 flex items-center space-x-2">
+                    <i data-lucide="shield-check" class="w-4 h-4"></i>
+                    <span>Secure Booking Asset</span>
+                </button>
+                <button class="bg-zinc-900/90 hover:bg-zinc-800 text-white border border-zinc-700 uppercase tracking-wider text-xs px-6 py-3.5 rounded-sm transition-all flex items-center space-x-2">
+                    <i data-lucide="info" class="w-4 h-4"></i>
+                    <span>Technical Architecture</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Interactive Interactive Map Area -->
+    <section class="px-6 md:px-16 py-12">
+        <div class="mb-6 flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <h2 class="heading-font text-white text-lg font-bold tracking-wider">01 / GLOBAL DISTRIBUTION ARCHITECTURE</h2>
+                <p class="text-xs text-zinc-500 mt-1">Select your geographic region on the grid network to calculate customs overhead and transit paths.</p>
+            </div>
+            <div id="activeRegionTag" class="text-xs font-mono text-cyan-400 bg-cyan-950/30 border border-cyan-900 px-3 py-1.5 rounded">
+                CONNECTED NODE: GLOBAL INTERNET MATRIX (DEFAULT)
+            </div>
+        </div>
+        
+        <div class="w-full bg-zinc-950 rounded-xl border border-zinc-900 overflow-hidden relative p-4 min-h-[320px] md:min-h-[420px] flex items-center justify-center">
+            <!-- Simulated High-Tech Vector Grid Map Background -->
+            <div class="absolute inset-0 opacity-20 pointer-events-none bg-[radial-gradient(#1f2937_1px,transparent_1px)] [background-size:16px_16px]"></div>
+            
+            <div class="relative w-full max-w-4xl aspect-[2/1] bg-contain bg-center bg-no-repeat flex items-center justify-center" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_blank_black_white.svg'); filter: invert(1) opacity(0.15);">
+            </div>
+
+            <!-- Global Map Controls overlaid cleanly -->
+            <div class="absolute inset-0 flex flex-wrap p-6 items-center justify-center gap-4 md:gap-8 z-20">
+                <button onclick="selectCountry('North America', 1.05, 'USD')" class="glass-panel hover:bg-cyan-500/20 px-4 py-3 rounded-lg border border-zinc-700 hover:border-cyan-400 transition group text-left">
+                    <span class="block text-xs font-bold text-white group-hover:text-cyan-400">NORTH AMERICA</span>
+                    <span class="text-[10px] text-zinc-400">Est. Logistics: 7 Days</span>
+                </button>
+                <button onclick="selectCountry('European Union', 1.10, 'EUR')" class="glass-panel hover:bg-cyan-500/20 px-4 py-3 rounded-lg border border-zinc-700 hover:border-cyan-400 transition group text-left">
+                    <span class="block text-xs font-bold text-white group-hover:text-cyan-400">EUROPE ZONE</span>
+                    <span class="text-[10px] text-zinc-400">Est. Logistics: 4 Days</span>
+                </button>
+                <button onclick="selectCountry('Malaysia / SE Asia', 1.18, 'MYR')" class="glass-panel hover:bg-cyan-500/20 px-4 py-3 rounded-lg border border-zinc-700 hover:border-cyan-400 transition group text-left">
+                    <span class="block text-xs font-bold text-white group-hover:text-cyan-400">MALAYSIA Hub</span>
+                    <span class="text-[10px] text-zinc-400">Est. Logistics: 12 Days</span>
+                </button>
+                <button onclick="selectCountry('Nigeria / West Africa', 1.25, 'NGN')" class="glass-panel hover:bg-cyan-500/20 px-4 py-3 rounded-lg border border-zinc-700 hover:border-cyan-400 transition group text-left">
+                    <span class="block text-xs font-bold text-white group-hover:text-cyan-400">AFRICA Hub</span>
+                    <span class="text-[10px] text-zinc-400">Est. Logistics: 14 Days</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Showroom Inventory & Real Filters -->
+    <main class="px-6 md:px-16 py-8">
+        <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-zinc-800 pb-6 mb-8 gap-4">
+            <div>
+                <h2 class="heading-font text-white text-lg font-bold tracking-wider">02 / INTERNATIONAL FLEET ARCHIVE</h2>
+                <p class="text-xs text-zinc-500 mt-1">Real-world market valuations with live verification pictures.</p>
+            </div>
+            <div class="flex flex-wrap gap-2">
+                <button onclick="filterFleet('all')" class="bg-cyan-500 text-black px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm">All Classes</button>
+                <button onclick="filterFleet('hypercar')" class="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-white px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm transition">Hypercar</button>
+                <button onclick="filterFleet('luxury-suv')" class="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-white px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm transition">Luxury SUV</button>
+                <button onclick="filterFleet('electric')" class="bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-white px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm transition">EV / Future</button>
+            </div>
+        </div>
+
+        <!-- Inventory Grid System -->
+        <div id="fleetGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Dynamic Injection Target -->
+        </div>
+    </main>
+
+    <!-- Elegant Luxury Footer -->
+    <footer class="mt-24 border-t border-zinc-900 bg-zinc-950 p-12 text-center text-xs text-zinc-600 space-y-4">
+        <div class="heading-font text-zinc-400 font-bold tracking-widest text-sm">VELOCITY AUTOMOTIVE ENTERPRISE</div>
+        <p class="max-w-md mx-auto">Connecting digital twin assets with authentic global logistics systems across 195 nations.</p>
+        <div class="text-[10px] text-zinc-700">&copy; 2026 Velocity Worldwide. High-fidelity web prototype interface.</div>
+    </footer>
+
+    <!-- Logic System Script -->
+    <script>
+        // Real-world database with precise high-res visual references
+        const carData = [
+            {
+                id: 1,
+                name: "Bugatti Chiron Super Sport",
+                category: "hypercar",
+                basePriceUSD: 3825000,
+                engine: "8.0L W16 Quad-Turbo",
+                power: "1578 HP",
+                image: "https://images.unsplash.com/photo-1600706432502-75a0e2e38979?auto=format&fit=crop&w=800&q=80",
+                desc: "The absolute pinnacle of internal combustion performance art."
+            },
+            {
+                id: 2,
+                name: "Porsche 911 GT3 RS",
+                category: "hypercar",
+                basePriceUSD: 223800,
+                engine: "4.0L Naturally Aspirated Boxer 6",
+                power: "518 HP",
+                image: "https://images.unsplash.com/photo-1705663454371-d64c0dbfa36c?auto=format&fit=crop&w=800&q=80",
+                desc: "Pure track engineering calibrated seamlessly for legal road dominance."
+            },
+            {
+                id: 3,
+                name: "Rolls-Royce Cullinan Series II",
+                category: "luxury-suv",
+                basePriceUSD: 450000,
+                engine: "6.75L Twin-Turbo V12",
+                power: "563 HP",
+                image: "https://images.unsplash.com/photo-1632245889029-e406faaa34cd?auto=format&fit=crop&w=800&q=80",
+                desc: "Unmatched luxury craftsmanship soaring above all geographic terrains."
+            },
+            {
+                id: 4,
+                name: "Lamborghini Revuelto",
+                category: "hypercar",
+                basePriceUSD: 608000,
+                engine: "6.5L V12 Plug-In Hybrid",
+                power: "1001 HP",
+                image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?auto=format&fit=crop&w=800&q=80",
+                desc: "The next-generation high performance electrified V12 supercar."
+            },
+            {
+                id: 5,
+                name: "Ferrari Purosangue",
+                category: "luxury-suv",
+                basePriceUSD: 400000,
+                engine: "6.5L Naturally Aspirated V12",
+                power: "715 HP",
+                image: "https://images.unsplash.com/photo-1688649749141-8fec00c25a58?auto=format&fit=crop&w=800&q=80",
+                desc: "Maranello's unique high-riding masterpiece powered by true racing DNA."
+            },
+            {
+                id: 6,
+                name: "Rimac Nevera Time Attack",
+                category: "electric",
+                basePriceUSD: 2200000,
+                engine: "Quad-Motor Liquid Cooled EV",
+                power: "1914 HP",
+                image: "https://images.unsplash.com/photo-1680601726591-62d471df42f1?auto=format&fit=crop&w=800&q=80",
+                desc: "Breaking universal records through clean, absolute electric acceleration."
+            }
+        ];
+
+        // State Tracking variables
+        let currentCurrency = 'USD';
+        let currentTaxMultiplier = 1.0;
+        let selectedCategory = 'all';
+
+        const currencySymbols = {
+            USD: '$',
+            EUR: '€',
+            MYR: 'RM ',
+            NGN: '₦'
+        };
+
+        const currencyRates = {
+            USD: 1.0,
+            EUR: 0.92,
+            MYR: 4.45,
+            NGN: 1480.00
+        };
+
+        // Initialize App Interface
+        window.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderShowroomGrid();
+        });
+
+        // Dynamic Card Renderer
+        function renderShowroomGrid() {
+            const grid = document.getElementById('fleetGrid');
+            grid.innerHTML = '';
+
+            const filtered = selectedCategory === 'all' 
+                ? carData 
+                : carData.filter(c => c.category === selectedCategory);
+
+            filtered.forEach(car => {
+                // Precise math calculation for regional logistics markup + currency conversion
+                const localizedPrice = (car.basePriceUSD * currentTaxMultiplier * currencyRates[currentCurrency]);
+                const formattedPrice = new Intl.NumberFormat('en-US', {
+                    maximumFractionDigits: 0
+                }).format(localizedPrice);
+
+                const cardHTML = `
+                    <div class="glass-panel rounded-lg overflow-hidden border border-zinc-800/80 hover:border-cyan-500/40 transition-all duration-300 group flex flex-col justify-between">
+                        <div class="relative overflow-hidden aspect-[16/10] bg-zinc-900">
+                            <img src="${car.image}" alt="${car.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                            <div class="absolute top-3 right-3 bg-black/80 backdrop-blur-md px-2.5 py-1 text-[10px] font-bold tracking-widest text-cyan-400 border border-zinc-800 uppercase rounded">
+                                ${car.category}
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col justify-between">
+                            <div class="space-y-2">
+                                <h3 class="text-white font-semibold text-lg tracking-wide group-hover:text-cyan-400 transition-colors">${car.name}</h3>
+                                <p class="text-xs text-zinc-500 line-clamp-2">${car.desc}</p>
+                                <div class="py-3 border-t border-b border-zinc-900 grid grid-cols-2 gap-2 text-[11px] font-mono text-zinc-400">
+                                    <div class="flex items-center space-x-1">
+                                        <i data-lucide="activity" class="w-3.5 h-3.5 text-zinc-600"></i>
+                                        <span>${car.power}</span>
+                                    </div>
+                                    <div class="flex items-center space-x-1">
+                                        <i data-lucide="cpu" class="w-3.5 h-3.5 text-zinc-600"></i>
+                                        <span class="truncate">${car.engine}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] text-zinc-500 uppercase tracking-widest">Global Valuation</span>
+                                    <span class="text-white font-mono text-base font-bold text-cyan-300">${currencySymbols[currentCurrency]}${formattedPrice}</span>
+                                </div>
+                                <button onclick="updateHeroPreview(${car.id})" class="bg-zinc-900 hover:bg-cyan-500 hover:text-black border border-zinc-800 text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-2 transition-all rounded-sm">
+                                    Preview Base
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.insertAdjacentHTML('beforeend', cardHTML);
+            });
+            
+            // Re-render icons dynamically injected
+            lucide.createIcons();
+        }
+
+        // Active Country Handler via interactive canvas elements
+        function selectCountry(countryName, taxRate, preferredCurrency) {
+            currentTaxMultiplier = taxRate;
+            currentCurrency = preferredCurrency;
+            
+            document.getElementById('currencySelector').value = preferredCurrency;
+            document.getElementById('activeRegionTag').innerText = `CONNECTED NODE: ${countryName.toUpperCase()} (Logistics Markup Applied)`;
+            
+            renderShowroomGrid();
+        }
+
+        // Manual Navbar Currency Sync Selector
+        function changeGlobalCurrency() {
+            currentCurrency = document.getElementById('currencySelector').value;
+            renderShowroomGrid();
+        }
+
+        // Fleet Filtering Categories Action
+        function filterFleet(category) {
+            selectedCategory = category;
+            
+            // Toggle highlight colors on filter elements
+            const buttons = event.currentTarget.parentNode.children;
+            for(let btn of buttons) {
+                btn.className = "bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-white px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm transition";
+            }
+            event.currentTarget.className = "bg-cyan-500 text-black px-4 py-2 text-xs font-semibold tracking-wider uppercase rounded-sm";
+            
+            renderShowroomGrid();
+        }
+
+        // Interactive Viewport Showcase Changer
+        function updateHeroPreview(carId) {
+            const targetCar = carData.find(c => c.id === carId);
+            if (!targetCar) return;
+
+            document.getElementById('heroImage').src = targetCar.image;
+            document.getElementById('heroName').innerText = targetCar.name.toUpperCase();
+            document.getElementById('heroSpecs').innerText = `${targetCar.engine} | ${targetCar.power} | ${targetCar.desc}`;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
